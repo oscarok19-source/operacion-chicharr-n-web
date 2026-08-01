@@ -1,0 +1,305 @@
+/* ===== EXPLOSION / IMPACT ANIMATION ===== */
+
+/* Flash overlay on load */
+.flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--amarillo);
+  z-index: 9999;
+  pointer-events: none;
+  animation: flashBurst 0.6s ease-out forwards;
+}
+
+@keyframes flashBurst {
+  0% { opacity: 1; }
+  30% { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+
+/* Title explosion entrance */
+.title-main,
+.title-line2 {
+  opacity: 0;
+  animation: titleExplosion 0.8s cubic-bezier(0.17, 0.67, 0.29, 1.3) forwards 0.3s;
+}
+
+.title-line2 {
+  animation-delay: 0.5s;
+}
+
+@keyframes titleExplosion {
+  0% {
+    opacity: 0;
+    transform: scale(3) rotate(-5deg);
+    filter: brightness(3) blur(8px);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.15) rotate(1deg);
+    filter: brightness(1.5) blur(0);
+  }
+  60% {
+    transform: scale(0.95) rotate(-0.5deg);
+  }
+  80% {
+    transform: scale(1.03) rotate(0.2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1) blur(0);
+  }
+}
+
+/* Shake effect after impact */
+.hero.shake {
+  animation: screenShake 0.5s ease-in-out 0.8s;
+}
+
+@keyframes screenShake {
+  0%, 100% { transform: translate(0); }
+  10% { transform: translate(-4px, 2px); }
+  20% { transform: translate(4px, -2px); }
+  30% { transform: translate(-3px, 3px); }
+  40% { transform: translate(3px, -1px); }
+  50% { transform: translate(-2px, 1px); }
+  60% { transform: translate(2px, -2px); }
+  70% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  90% { transform: translate(-1px, 0); }
+}
+
+/* Explosion burst lines */
+.explosion-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.explosion-burst::before,
+.explosion-burst::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: burstRing 0.8s ease-out forwards 0.4s;
+}
+
+.explosion-burst::before {
+  width: 100px;
+  height: 100px;
+  border: 4px solid var(--amarillo);
+  opacity: 0;
+}
+
+.explosion-burst::after {
+  width: 200px;
+  height: 200px;
+  border: 3px solid var(--naranja);
+  opacity: 0;
+  animation-delay: 0.5s;
+}
+
+@keyframes burstRing {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(4);
+  }
+}
+
+/* Speed lines radiating from center */
+.speed-lines {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.speed-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amarillo), transparent);
+  transform-origin: left center;
+  opacity: 0;
+  animation: speedLineShoot 0.6s ease-out forwards;
+}
+
+.speed-line:nth-child(1) { transform: rotate(0deg); animation-delay: 0.4s; }
+.speed-line:nth-child(2) { transform: rotate(30deg); animation-delay: 0.42s; }
+.speed-line:nth-child(3) { transform: rotate(60deg); animation-delay: 0.44s; }
+.speed-line:nth-child(4) { transform: rotate(90deg); animation-delay: 0.46s; }
+.speed-line:nth-child(5) { transform: rotate(120deg); animation-delay: 0.48s; }
+.speed-line:nth-child(6) { transform: rotate(150deg); animation-delay: 0.5s; }
+.speed-line:nth-child(7) { transform: rotate(180deg); animation-delay: 0.52s; }
+.speed-line:nth-child(8) { transform: rotate(210deg); animation-delay: 0.54s; }
+.speed-line:nth-child(9) { transform: rotate(240deg); animation-delay: 0.56s; }
+.speed-line:nth-child(10) { transform: rotate(270deg); animation-delay: 0.58s; }
+.speed-line:nth-child(11) { transform: rotate(300deg); animation-delay: 0.6s; }
+.speed-line:nth-child(12) { transform: rotate(330deg); animation-delay: 0.62s; }
+
+@keyframes speedLineShoot {
+  0% {
+    opacity: 0.8;
+    width: 0;
+  }
+  50% {
+    opacity: 0.6;
+    width: 400px;
+  }
+  100% {
+    opacity: 0;
+    width: 600px;
+  }
+}
+
+/* Particles / debris */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--amarillo);
+  opacity: 0;
+  animation: particleFly 1s ease-out forwards;
+}
+
+.particle:nth-child(1) { top: 45%; left: 48%; animation-delay: 0.35s; --tx: -120px; --ty: -80px; }
+.particle:nth-child(2) { top: 50%; left: 52%; animation-delay: 0.37s; --tx: 100px; --ty: -100px; background: var(--naranja); }
+.particle:nth-child(3) { top: 52%; left: 46%; animation-delay: 0.39s; --tx: -80px; --ty: 90px; }
+.particle:nth-child(4) { top: 48%; left: 55%; animation-delay: 0.41s; --tx: 130px; --ty: 60px; background: var(--rojo); }
+.particle:nth-child(5) { top: 44%; left: 50%; animation-delay: 0.43s; --tx: -30px; --ty: -130px; }
+.particle:nth-child(6) { top: 55%; left: 49%; animation-delay: 0.45s; --tx: 50px; --ty: 110px; background: var(--naranja); }
+.particle:nth-child(7) { top: 47%; left: 44%; animation-delay: 0.47s; --tx: -150px; --ty: -20px; }
+.particle:nth-child(8) { top: 53%; left: 56%; animation-delay: 0.49s; --tx: 140px; --ty: -40px; background: var(--rojo); }
+
+@keyframes particleFly {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) scale(0);
+  }
+}
+
+/* ===== UTILITY ANIMATIONS ===== */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pulse glow on title after animation */
+.title-main.pulse,
+.title-line2.pulse {
+  animation: titlePulse 3s ease-in-out infinite 3s;
+}
+
+@keyframes titlePulse {
+  0%, 100% {
+    text-shadow:
+      5px 5px 0 var(--rojo),
+      10px 10px 0 rgba(0,0,0,0.4);
+  }
+  50% {
+    text-shadow:
+      5px 5px 0 var(--rojo),
+      10px 10px 0 rgba(0,0,0,0.4),
+      0 0 40px rgba(232,200,64,0.3);
+  }
+}
+
+/* ===== PAGE TRANSITION ===== */
+.page-enter {
+  animation: pageSlideIn 0.6s ease forwards;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== HOVER BURST EFFECT ON CARDS ===== */
+.panel-card::before {
+  content: '!';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-family: 'Bangers', cursive;
+  font-size: 4rem;
+  color: var(--amarillo);
+  text-shadow: 3px 3px 0 var(--rojo);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.panel-card:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.15;
+}
