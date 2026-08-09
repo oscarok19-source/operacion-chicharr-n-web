@@ -362,6 +362,41 @@ nav a:hover::before {
   transform: scale(1.05);
 }
 
+/* ===== JUEGO FURIA DE PAPELES ===== */
+.game-cta {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  text-align: center;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 10px, rgba(232,200,64,0.05) 10px 12px),
+    var(--azul-oscuro);
+  border: 3px solid var(--amarillo);
+  outline: 2px dashed var(--rojo);
+  outline-offset: 6px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.4);
+}
+.game-cta .game-cta-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: var(--amarillo);
+  text-shadow: 3px 3px 0 var(--rojo);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.game-cta .game-cta-sub {
+  font-family: 'Special Elite', cursive;
+  color: var(--crema-oscuro);
+  font-size: 1.05rem;
+  margin: 15px auto 30px;
+  max-width: 600px;
+  line-height: 1.7;
+}
+.game-cta .menu-btn {
+  margin-top: 0;
+}
+
 /* ===== PAGE SECTIONS ===== */
 .page-section {
   padding: 80px 20px;
