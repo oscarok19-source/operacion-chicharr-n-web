@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Corteza - Operacion Chicharron</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/la-corteza.css">
+</head>
+<body class="corteza-page">
+
+  <button class="nav-toggle" aria-label="Menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav>
+    <div class="nav-logo">OPERACION CHICHARRON</div>
+    <a href="index.html">Inicio</a>
+    <a href="la-corteza.html">La Corteza</a>
+    <a href="personajes.html">Personajes</a>
+    <a href="historia.html">Historia</a>
+    <a href="volumenes.html">Volumenes</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="merchandising.html">Merchandising</a>
+  </nav>
+
+  <!-- HERO DOSSIER -->
+  <header class="corteza-hero">
+    <h1>LA CORTEZA</h1>
+    <div class="corteza-sub">UN SÓTANO · DOCE HOMBRES · UN CHICHARRÓN</div>
+    <span class="corteza-stamp">ACCESO: ULTRA SECRETO</span>
+  </header>
+
+  <!-- MAPA MUNDIAL -->
+  <div class="map-wrap reveal">
+    <div class="map-frame">
+      <div class="map-title">MAPA DE DOMINACIÓN MUNDIAL</div>
+      <div class="map-legend">
+        ● NODO OPERATIVO — toca para abrir expediente<br>
+        ─ HILO ROJO DE INFLUENCIA CÁRNICA<br>
+        ⚠ CÁMARA Nº7 — SEÑAL PERDIDA
+      </div>
+      <svg class="map-svg" viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="comic-land" x="-15%" y="-15%" width="130%" height="130%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" seed="7" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+            <feOffset in="rough" dx="4" dy="5" result="shifted"/>
+            <feFlood flood-color="#050509" result="ink"/>
+            <feComposite in="ink" in2="shifted" operator="in" result="shadow"/>
+            <feMerge>
+              <feMergeNode in="shadow"/>
+              <feMergeNode in="rough"/>
+            </feMerge>
+          </filter>
+          <filter id="rough-thread" x="-15%" y="-15%" width="130%" height="130%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.035 0.06" numOctaves="2" seed="13" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <filter id="grain" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="5" stitchTiles="stitch" result="n"/>
+            <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.88  0 0 0 0 0.78  0 0 0 0 0.55  0 0 0 0.05 0"/>
+          </filter>
+          <pattern id="halftone" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(7)">
+            <rect width="9" height="9" fill="#46587C"/>
+            <circle cx="2.2" cy="2.2" r="1.9" fill="#E8C840" opacity="0.45"/>
+            <circle cx="6.6" cy="6.6" r="1.5" fill="#D4541A" opacity="0.35"/>
+          </pattern>
+        </defs>
+
+        <!-- Continentes dibujados a tinta -->
+        <g class="continent-layer">
+        <path class="continent" d="M 70,110 C 110,75 170,70 210,85 C 245,92 265,100 270,115 C 278,130 272,150 260,165 C 270,180 272,195 262,205 C 245,215 235,225 238,240 C 230,260 225,275 218,290 C 208,272 202,252 196,234 C 184,226 172,212 158,201 C 132,178 98,148 70,110 Z"/>
+        <path class="continent" d="M 215,300 C 235,305 255,315 265,325 C 285,335 295,355 290,375 C 300,390 292,405 280,415 C 268,430 262,450 255,470 C 251,479 249,483 248,485 C 238,458 234,436 228,412 C 222,392 218,372 215,352 C 213,332 214,316 215,300 Z"/>
+        <path class="continent" d="M 298,52 C 322,42 344,48 348,62 C 352,76 340,92 324,97 C 308,101 292,92 287,76 C 283,62 288,55 298,52 Z"/>
+        <path class="continent" d="M 420,150 C 412,162 420,172 432,174 C 445,178 455,172 460,165 C 465,158 460,150 452,147 C 465,135 480,120 495,112 C 506,106 516,104 524,108 C 532,112 538,118 541,126 C 546,118 553,108 560,98 C 568,86 580,74 588,82 C 594,88 590,98 584,106 C 578,115 574,123 578,130 C 586,138 592,148 578,150 C 566,152 560,145 550,146 C 545,150 540,154 534,152 C 524,149 517,155 512,163 C 506,172 496,176 488,172 C 482,168 476,162 471,155 C 466,150 459,148 452,149 C 440,150 430,152 420,150 Z"/>
+        <path class="continent" d="M 438,188 C 448,184 460,188 468,198 C 478,214 488,230 494,246 C 498,258 503,272 498,288 C 506,298 514,304 508,314 C 502,324 492,324 488,316 C 484,334 478,360 470,380 C 462,400 455,416 448,426 C 440,432 431,426 428,416 C 423,400 418,380 412,360 C 406,340 403,320 409,300 C 398,290 390,281 394,268 C 399,254 409,244 414,234 C 419,222 425,210 430,200 C 433,193 435,190 438,188 Z"/>
+        <path class="continent" d="M 532,122 C 542,106 558,96 580,90 C 610,82 650,76 692,70 C 730,66 770,68 800,80 C 815,88 812,96 802,100 C 790,110 785,118 780,128 C 776,138 766,144 761,139 C 752,150 747,164 757,176 C 766,182 771,191 764,201 C 757,211 747,206 744,196 C 742,206 749,216 744,226 C 737,236 730,236 727,226 C 720,231 715,240 721,249 C 711,247 700,241 690,246 C 685,239 682,231 681,223 C 690,216 695,211 687,206 C 680,201 675,208 668,205 C 660,196 652,191 645,196 C 638,201 632,210 628,222 C 621,216 615,210 620,200 C 612,196 605,190 600,185 C 595,176 590,166 585,158 C 580,152 575,150 570,155 C 566,151 560,146 555,148 C 550,143 545,145 541,149 C 537,146 535,141 535,136 C 535,130 534,126 532,122 Z"/>
+        <path class="continent" d="M 758,318 C 778,308 810,314 830,325 C 846,335 856,348 850,366 C 845,381 835,396 820,401 C 800,409 780,405 768,395 C 755,385 748,372 745,358 C 742,345 748,335 760,322 Z"/>
+        <path class="continent" d="M 862,414 C 867,409 874,411 876,419 C 878,427 871,432 865,430 C 860,427 858,419 862,414 Z"/>
+        </g>
+
+        <!-- Hilos rojos garabateados -->
+        <g class="thread-layer">
+        <path class="red-thread" id="thread-ginebra" d="M 478,140 C 486,180 493,220 500,270"/>
+        <path class="red-thread" id="thread-madrid" d="M 438,162 C 458,200 478,235 500,270"/>
+        <path class="red-thread" id="thread-cdmx" d="M 200,240 C 290,250 400,260 500,270"/>
+        <path class="red-thread" id="thread-buenosaires" d="M 255,410 C 330,370 420,320 500,270"/>
+        <path class="red-thread" id="thread-manila" d="M 775,205 C 690,225 600,245 500,270"/>
+        <path class="red-thread" id="thread-estonia" d="M 549,133 C 535,175 518,225 500,270"/>
+        </g>
+
+        <!-- Chicharrón central -->
+        <g transform="translate(500,270)">
+          <g class="chicharron-central">
+            <path d="M -34,-26 C -28,-34 -10,-36 2,-33 C 14,-36 28,-31 34,-24 C 39,-17 40,-3 37,9 C 34,21 28,31 16,35 C 4,39 -10,38 -20,32 C -30,26 -36,12 -37,1 C -38,-11 -37,-21 -34,-26 Z" fill="#E8C840" stroke="#C4A020" stroke-width="2"/>
+            <circle cx="-12" cy="-10" r="5" fill="#C4A020" opacity="0.6"/>
+            <circle cx="10" cy="-4" r="6" fill="#C4A020" opacity="0.6"/>
+            <circle cx="-16" cy="12" r="5" fill="#C4A020" opacity="0.6"/>
+            <circle cx="9" cy="14" r="5" fill="#C4A020" opacity="0.6"/>
+            <circle cx="18" cy="-15" r="4" fill="#C4A020" opacity="0.6"/>
+            <circle cx="-4" cy="22" r="4" fill="#C4A020" opacity="0.6"/>
+            <ellipse class="chicharron-glint" cx="-14" cy="-18" rx="10" ry="6" transform="rotate(-30 -14 -18)"/>
+          </g>
+          <circle class="chicharron-glint" cx="-42" cy="-30" r="3" style="animation-delay: 0.8s;"/>
+          <circle class="chicharron-glint" cx="40" cy="-22" r="2.5" style="animation-delay: 1.4s;"/>
+          <circle class="chicharron-glint" cx="36" cy="30" r="3" style="animation-delay: 2s;"/>
+          <text x="0" y="58" text-anchor="middle" font-family="Bangers, cursive" font-size="18" fill="#D4541A" letter-spacing="3" paint-order="stroke" stroke="#0A0A0A" stroke-width="4">LA MUESTRA</text>
+        </g>
+
+        <!-- NODOS -->
+        <g class="city-node" data-city="ginebra">
+          <circle class="pulse-ring" cx="478" cy="140" r="10"/>
+          <circle class="city-circle" cx="478" cy="140" r="10"/>
+          <text x="478" y="123" text-anchor="middle">GINEBRA</text>
+          <text x="478" y="158" text-anchor="middle" font-size="11" fill="#C4A020">SEDE</text>
+          <text class="node-share" data-city="ginebra" x="478" y="178" text-anchor="middle">COORDINACIÓN 0,96x</text>
+        </g>
+
+        <g class="city-node" data-city="madrid">
+          <circle class="pulse-ring" cx="438" cy="162" r="10"/>
+          <circle class="city-circle" cx="438" cy="162" r="10"/>
+          <text x="438" y="147" text-anchor="middle">MADRID</text>
+          <text class="node-share" data-city="madrid" x="438" y="160" text-anchor="middle">0,0%</text>
+          <circle class="lost-blink" cx="438" cy="162" r="10"/>
+          <text x="438" y="182" text-anchor="middle" font-size="11" fill="#B22222" paint-order="stroke" stroke="#0A0A0A" stroke-width="3">CÁMARA Nº7: SEÑAL PERDIDA</text>
+        </g>
+
+        <g class="city-node" data-city="cdmx">
+          <circle class="pulse-ring" cx="200" cy="240" r="10"/>
+          <circle class="city-circle" cx="200" cy="240" r="10"/>
+          <text x="200" y="224" text-anchor="middle">CIUDAD DE MÉXICO</text>
+          <text class="node-share" data-city="cdmx" x="200" y="244" text-anchor="middle">0,0%</text>
+        </g>
+
+        <g class="city-node" data-city="buenosaires">
+          <circle class="pulse-ring" cx="255" cy="410" r="10"/>
+          <circle class="city-circle" cx="255" cy="410" r="10"/>
+          <text x="255" y="396" text-anchor="middle">BUENOS AIRES</text>
+          <text class="node-share" data-city="buenosaires" x="255" y="443" text-anchor="middle">0,0%</text>
+        </g>
+
+        <g class="city-node" data-city="manila">
+          <circle class="pulse-ring" cx="775" cy="205" r="10"/>
+          <circle class="city-circle" cx="775" cy="205" r="10"/>
+          <text x="775" y="190" text-anchor="middle">MANILA</text>
+          <text class="node-share" data-city="manila" x="775" y="172" text-anchor="middle">0,0%</text>
+        </g>
+
+        <g class="mystery-ring">
+          <circle cx="549" cy="133" r="24" fill="none"/>
+          <line x1="536" y1="120" x2="562" y2="146"/>
+          <line x1="562" y1="120" x2="536" y2="146"/>
+        </g>
+
+        <g class="city-node signal-lost" data-city="estonia">
+          <circle class="lost-blink" cx="549" cy="133" r="10"/>
+          <circle class="city-circle" cx="549" cy="133" r="10"/>
+          <text x="549" y="118" text-anchor="middle">TALLINN ?</text>
+          <text class="node-share" data-city="estonia" x="549" y="99" text-anchor="middle">¿?</text>
+        </g>
+
+        <!-- Marcas de cartógrafo -->
+        <g class="sea-waves" fill="none">
+          <path d="M 350,140 q 8,-6 16,0 q 8,6 16,0"/>
+          <path d="M 315,195 q 8,-6 16,0 q 8,6 16,0"/>
+          <path d="M 375,305 q 8,-6 16,0 q 8,6 16,0"/>
+          <path d="M 335,385 q 8,-6 16,0 q 8,6 16,0"/>
+          <path d="M 100,80 q 8,-6 16,0 q 8,6 16,0"/>
+          <path d="M 120,185 q 8,-6 16,0 q 8,6 16,0"/>
+          <path d="M 95,300 q 8,-6 16,0 q 8,6 16,0"/>
+          <path d="M 405,120 q 8,-6 16,0 q 8,6 16,0"/>
+          <path d="M 610,340 q 8,-6 16,0 q 8,6 16,0"/>
+          <path d="M 560,395 q 8,-6 16,0 q 8,6 16,0"/>
+          <path d="M 700,465 q 8,-6 16,0 q 8,6 16,0"/>
+          <path d="M 620,110 q 8,-6 16,0 q 8,6 16,0"/>
+        </g>
+
+        <g class="compass-rose" transform="translate(115,452)">
+          <circle cx="0" cy="0" r="36" fill="none" class="compass-ring"/>
+          <circle cx="0" cy="0" r="28" fill="none" class="compass-ring-dash"/>
+          <path d="M0,-42 L8,-8 L0,0 L-8,-8 Z" class="compass-n"/>
+          <path d="M0,42 L8,8 L0,0 L-8,8 Z" class="compass-s"/>
+          <path d="M42,0 L8,-8 L0,0 L8,8 Z" class="compass-e"/>
+          <path d="M-42,0 L-8,-8 L0,0 L-8,8 Z" class="compass-w"/>
+          <circle cx="0" cy="0" r="5" fill="#07070B"/>
+          <text x="0" y="-54" text-anchor="middle" class="compass-n-label">N</text>
+        </g>
+
+        <rect class="grain-layer" width="1000" height="520" filter="url(#grain)"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- SALA DE CONTROL -->
+  <section class="page-section sim-section">
+    <div class="section-header reveal">
+      <h2>Sala de Control</h2>
+      <p>Modelo de simulacion con datos economicos reales: crecimiento compuesto (CAGR), difusion logistica en curva S, elasticidad precio-demanda e indice de concentracion HHI. Mueve las palancas y observa como avanza el plan sobre el mapa.</p>
+    </div>
+
+    <div class="sim-controls reveal" id="sim-controls">
+      <div class="sim-panel">
+        <label class="sim-slider">
+          <span class="sim-label">HORIZONTE <em>(años)</em></span>
+          <output id="out-horizon">9</output>
+          <input type="range" id="sim-horizon" min="0" max="10" step="1" value="9">
+        </label>
+        <label class="sim-slider">
+          <span class="sim-label">CRECIMIENTO DEL MERCADO <em>(CAGR %)</em></span>
+          <output id="out-growth">5.0</output>
+          <input type="range" id="sim-growth" min="2.0" max="9.0" step="0.1" value="5.0">
+        </label>
+        <label class="sim-slider">
+          <span class="sim-label">CUOTA OBJETIVO <em>(% del mercado)</em></span>
+          <output id="out-target">25</output>
+          <input type="range" id="sim-target" min="5" max="60" step="1" value="25">
+        </label>
+        <label class="sim-slider">
+          <span class="sim-label">VELOCIDAD DE INFILTRACIÓN <em>(curva S)</em></span>
+          <output id="out-vel">1.00</output>
+          <input type="range" id="sim-vel" min="0.30" max="2.00" step="0.05" value="1.00">
+        </label>
+        <label class="sim-slider">
+          <span class="sim-label">ELASTICIDAD PRECIO-DEMANDA</span>
+          <output id="out-elast">1.00</output>
+          <input type="range" id="sim-elast" min="0.50" max="2.00" step="0.05" value="1.00">
+        </label>
+        <label class="sim-slider">
+          <span class="sim-label">FACTOR JIMÉNEZ <em>(bloqueo burocratico %)</em></span>
+          <output id="out-jimenez">0</output>
+          <input type="range" id="sim-jimenez" min="0" max="100" step="1" value="0">
+        </label>
+
+        <div class="sim-toggles">
+          <span class="sim-toggle"><input type="checkbox" id="nodo-madrid" checked><label for="nodo-madrid" class="lever"></label>MADRID</span>
+          <span class="sim-toggle"><input type="checkbox" id="nodo-cdmx" checked><label for="nodo-cdmx" class="lever"></label>CIUDAD DE MÉXICO</span>
+          <span class="sim-toggle"><input type="checkbox" id="nodo-buenosaires" checked><label for="nodo-buenosaires" class="lever"></label>BUENOS AIRES</span>
+          <span class="sim-toggle"><input type="checkbox" id="nodo-manila" checked><label for="nodo-manila" class="lever"></label>MANILA</span>
+          <span class="sim-toggle"><input type="checkbox" id="nodo-estonia"><label for="nodo-estonia" class="lever"></label>TALLINN — ¿POR QUÉ?</span>
+          <span class="sim-toggle"><input type="checkbox" id="nodo-ginebra" checked disabled><span class="lever"></span>GINEBRA — SEDE (FIJA)</span>
+        </div>
+
+        <div class="sim-actions">
+          <button type="button" class="sim-reset" id="sim-reset">RESTAURAR INFORME OFICIAL</button>
+          <span class="sim-note">Modelos: CAGR - difusion logistica - elasticidad - HHI. Fuentes: Growth Market Reports, Precedence Research, ABS Global.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sim-chart-wrap reveal">
+      <svg id="sim-chart" viewBox="0 0 560 260" aria-label="Proyeccion del plan de La Corteza"></svg>
+      <div class="sim-chart-legend">
+        <span class="lg-market">MERCADO GLOBAL DE CHICHARRONES ($B)</span>
+        <span class="lg-share">CUOTA DE LA CORTEZA (% del mercado)</span>
+      </div>
+      <div class="sim-hhi" id="sim-hhi"></div>
+    </div>
+  </section>
+
+  <!-- PANEL DE CIUDAD -->
+  <div class="city-panel reveal" id="city-panel">
+    <div class="panel-body">
+      <button class="panel-close" aria-label="Cerrar">&times;</button>
+      <div class="panel-city"></div>
+      <div class="panel-role"></div>
+      <div class="panel-blurb"></div>
+      <div class="panel-data"></div>
+    </div>
+  </div>
+
+  <!-- KPIS ECONÓMICOS -->
+  <div class="section-header reveal" style="margin-top: 80px;">
+    <h2>Base Económica</h2>
+    <p>Los números reales que mueven la dominación cárnica mundial. La receta perfecta es la llave de todo.</p>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card reveal">
+      <div class="kpi-label">Mercado global de chicharrones</div>
+      <div class="kpi-value" id="kpi-market-val">$5,7B → $8,8B</div>
+      <div class="kpi-sub" id="kpi-market-sub">1995 → 2004 · CAGR 5,2% · Norteamérica lidera (~36%)</div>
+      <div class="kpi-bar"><div class="kpi-fill" id="kpi-market-bar" data-value="65"></div></div>
+      <div class="kpi-source">Fuente: Growth Market Reports</div>
+    </div>
+
+    <div class="kpi-card reveal">
+      <div class="kpi-label">Cuota iberoamericana</div>
+      <div class="kpi-value" id="kpi-ib-val">&gt;25%</div>
+      <div class="kpi-sub" id="kpi-ib-sub">del comercio mundial de carne. Brasil, mayor exportador: &gt;2,5M t/año</div>
+      <div class="kpi-bar"><div class="kpi-fill" id="kpi-ib-bar" data-value="25"></div></div>
+      <div class="kpi-source">Fuente: ABS Global</div>
+    </div>
+
+    <div class="kpi-card reveal">
+      <div class="kpi-label">Carne de cerdo mundial</div>
+      <div class="kpi-value" id="kpi-cerdo-val">$302B → $441B</div>
+      <div class="kpi-sub" id="kpi-cerdo-sub">1995 → 2004 · CAGR 3,86% · materia prima de la dominación</div>
+      <div class="kpi-bar"><div class="kpi-fill" id="kpi-cerdo-bar" data-value="68"></div></div>
+      <div class="kpi-source">Fuente: Precedence Research</div>
+    </div>
+
+    <div class="kpi-card reveal">
+      <div class="kpi-label">Snacks de carne</div>
+      <div class="kpi-value" id="kpi-snack-val">$11,8B → $20,5B</div>
+      <div class="kpi-sub" id="kpi-snack-sub">1995 → 2004 · CAGR 6,3% · el chicharrón embolsado, vehículo perfecto</div>
+      <div class="kpi-bar"><div class="kpi-fill" id="kpi-snack-bar" data-value="58"></div></div>
+      <div class="kpi-source">Fuente: Towards FnB</div>
+    </div>
+  </div>
+
+  <!-- GAUGE -->
+  <div class="gauge-wrap reveal">
+    <div class="gauge-card">
+      <div class="gauge-label">TASA DE DOMINACIÓN MUNDIAL</div>
+      <div class="gauge-circle">
+        <svg viewBox="0 0 200 200">
+          <circle class="gauge-bg" cx="100" cy="100" r="90"/>
+          <circle class="gauge-fill" cx="100" cy="100" r="90"/>
+        </svg>
+        <div class="gauge-num">0<span class="pct">.0%</span></div>
+      </div>
+      <div class="gauge-note">
+        Objetivo: 100%.<br>
+        Realidad: bloqueada por un (1) intendente con un formulario y un cajón con cerradura.
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section-header reveal" style="margin-top: 80px;">
+    <h2>Expediente Cronológico</h2>
+    <p>Cómo La Corteza llegó a ser lo que es... y cómo empezó a dejar de serlo.</p>
+  </div>
+
+  <div class="corteza-timeline">
+    <div class="tl-row reveal">
+      <div class="tl-year">1953</div>
+      <div class="tl-text">El Doktor Helmut Brenz desarrolla la fórmula capaz de transmitirse a través de la grasa animal procesada. Esa misma noche nace La Corteza en un sótano de Ginebra. Doce hombres. Una mesa oval. Una bombilla.</div>
+    </div>
+    <div class="tl-row reveal">
+      <div class="tl-year">1961</div>
+      <div class="tl-text">Brenz se empadrona en Etxarri-Aranatz (Navarra). Paga el impuesto de bienes inmuebles con una puntualidad religiosa. Creía estar escondiéndose. Estaba dejando un rastro de formularios perfectamente ordenados.</div>
+    </div>
+    <div class="tl-row reveal">
+      <div class="tl-year">1993</div>
+      <div class="tl-text">Expira el plazo legal de desclasificación de la Operación Grasilla. Nadie lo nota. <em>Nadie pensó que alguien lo buscaría.</em></div>
+    </div>
+    <div class="tl-row reveal">
+      <div class="tl-year">1995</div>
+      <div class="tl-text">Máxima expansión: seis hilos rojos sobre el mapa. Ginebra, Madrid, Buenos Aires, Ciudad de México, Manila y, por alguna razón que aún no queda clara, Estonia.</div>
+    </div>
+    <div class="tl-row reveal">
+      <div class="tl-year">HOY</div>
+      <div class="tl-text">09:14 — El Cabo Primero Alberto Jiménez solicita el expediente "por los canales reglamentarios". La Corteza lo bloquea. <em>Jiménez presenta recurso de alzada citando la Directiva Europea de Acceso a la Información de 1993.</em></div>
+    </div>
+    <div class="tl-row reveal">
+      <div class="tl-year">HOY</div>
+      <div class="tl-text">17:30 — La muestra es trasladada a "lugar seguro conforme al protocolo de custodia de evidencias en expediente activo". La Cámara Nº7 pierde la señal. <em>El cajón está vacío. Los doce hombres lo descubren a las 23:47.</em></div>
+    </div>
+  </div>
+
+  <!-- ACTIVOS -->
+  <div class="section-header reveal" style="margin-top: 80px;">
+    <h2>Activos Sobre el Terreno</h2>
+    <p>Último informe de estado de la red de La Corteza. Actualizado: hace cinco días. No va bien.</p>
+  </div>
+
+  <div class="assets-table-wrap reveal">
+    <table class="assets-table">
+      <thead>
+        <tr>
+          <th>Activo</th>
+          <th>Posición</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Comandante Aurelio Prats</td>
+          <td>Base Aérea — Sección de Intendencia</td>
+          <td><span class="status-warn">COMPROMETIDO — sin refrendo</span></td>
+        </tr>
+        <tr>
+          <td>Equipo de campo (3 hombres)</td>
+          <td>Misión de extracción nocturna</td>
+          <td><span class="status-fail">RETIRADO — solo encontró una nota</span></td>
+        </tr>
+        <tr>
+          <td>Técnico del aire acondicionado</td>
+          <td>Infiltración en la base</td>
+          <td><span class="status-fail">ESCOLTADO — sin certificado de habilitación</span></td>
+        </tr>
+        <tr>
+          <td>Furgoneta sin matrícula</td>
+          <td>Vigilancia exterior</td>
+          <td><span class="status-fail">RETIRADA — Guardia Civil</span></td>
+        </tr>
+        <tr>
+          <td>Cámara Nº7</td>
+          <td>Despacho de Jiménez</td>
+          <td><span class="status-fail">SEÑAL PERDIDA — 17:30</span></td>
+        </tr>
+        <tr>
+          <td>Doktor Helmut Brenz</td>
+          <td>En transición — Navarra</td>
+          <td><span class="status-warn">HIZO LAS MALETAS. LUEGO LAS DESHIZO.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="text-align:center; padding: 60px 20px;" class="reveal">
+    <p style="font-family: 'Special Elite', cursive; color: var(--naranja); font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.8;">
+      "¿Sabe Jiménez lo que tiene?" — No. Todavía cree que es un problema administrativo.<br>
+      <span style="color: var(--crema-oscuro);">— Dios mío. Es más peligroso de lo que pensábamos.</span>
+    </p>
+  </div>
+
+  <footer>
+    <div class="footer-logo">OPERACION CHICHARRON</div>
+    <div class="footer-tagline">!Que la fuerza del chicharron te acompanne... y tambien tu colesterol!</div>
+    <div class="footer-links">
+      <a href="index.html">Inicio</a>
+      <a href="la-corteza.html">La Corteza</a>
+      <a href="personajes.html">Personajes</a>
+      <a href="historia.html">Historia</a>
+      <a href="volumenes.html">Volumenes</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="merchandising.html">Merchandising</a>
+    </div>
+    <div class="footer-copy">www.operacionchicharron.gob (NO OFICIAL)</div>
+  </footer>
+
+  <script src="js/la-corteza.js"></script>
+</body>
+</html>
